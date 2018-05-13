@@ -1,20 +1,26 @@
 package ung.joel.trainingjava;
 
-import ung.joel.trainingjava.interfacejava8.NouvelleInterface;
+import ung.joel.trainingjava.interfacejava8.InterfaceDesHeros;
+import ung.joel.trainingjava.interfacejava8.SuperHero;
 
-/**
- * Hello world!
- */
-public final class App implements NouvelleInterface {
-    private App() {
-    }
-    /**
-     * Says hello to the world.
-     * @param args The arguments of the program.
-     */
+public final class App {
+
     public static void main(String[] args) {
-        System.out.println("Hello World!");
-        App app = new App();
-        app.methodeAvecComportementParDefaut();
+        // Interface
+        interfaceExemple();
+    }
+
+    public static void interfaceExemple() {
+        SuperHero superman = new SuperHero("Superman");
+        System.out.println("---------------------- Interface en java 8 -----------------------");
+        System.out.println("Lancement de la méthode par défaut :");
+        superman.methodeAvecComportementParDefaut();
+        System.out.println("Lancement de la méthode statique :");
+        InterfaceDesHeros.methodeStatique();
+
+        SuperHero batman = new SuperHero("Batman");
+        System.out.println("Extension de Comparable :");
+        System.out.println("Superman > Batman : " + superman.estApres(batman));
+        System.out.println("------------------------------------------------------------------");
     }
 }
